@@ -1,5 +1,6 @@
 name: Node.js CI
 
+
 on:
   push:
     branches: [ main ]
@@ -29,3 +30,4 @@ jobs:
     - run: npm ci
     - run: npm test
     - run: curl -u${{ secrets.ARTIFACTORY_UN }}:${{ secrets.ARTIFACTORY_PW }} -T index.js "https://softwareforlove.jfrog.io/artifactory/default-generic-local/${{ steps.date.outputs.date }}/"
+    
